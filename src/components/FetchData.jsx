@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react'
+import "../Style/FetchData.css"
+
+const FetchData = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -6,6 +10,7 @@
       .then((json) => setData(json))
       .catch(() => alert('データの取得に失敗しました'))
   }, [])
+
   console.log(data)
   return (
     <div className="fetch-data-container">
@@ -21,3 +26,5 @@
     </div>
   )
 }
+
+export default FetchData
