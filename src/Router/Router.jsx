@@ -4,6 +4,11 @@ import Thread from '../page/Thread'
 
 const Router = () => {
   return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Thread />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
