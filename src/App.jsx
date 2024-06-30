@@ -1,12 +1,11 @@
-import FetchData from "./components/FetchData"
+import Router from "./Router/Router";
 
-function App() {
-
+const App = () => {
   return (
     <>
-      <FetchData />
+      <Router />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
