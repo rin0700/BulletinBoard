@@ -7,6 +7,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Thread />} />
+        <Route path='/threads/new' element={<NewThread />} />
       </Routes>
     </BrowserRouter>
   )
