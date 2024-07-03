@@ -4,6 +4,19 @@ import axios from 'axios'
 function NewThread() {
   const [newThread, setNewThread] = useState('')
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    axios.post('https://railway.bulletinboard.techtrain.dev/threads', {
+      title: newThread
+    })
+      .then((res) => {
+        console.log(res)
+        alert('スレッドを作成しました')
+      })
+      .catch((err) => {
+        console.log(err)
+        alert('スレッドの作成に失敗しました')
+      })
   return (
     <>
       <h2>スレッド新規作成</h2>
