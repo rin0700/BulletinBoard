@@ -17,6 +17,9 @@ function NewThread() {
         console.log(err)
         alert('スレッドの作成に失敗しました')
       })
+
+    setNewThread('')
+  }
   return (
     <>
       <h2>スレッド新規作成</h2>
