@@ -17,7 +17,6 @@ const FetchData = () => {
       .catch(() => alert('データの取得に失敗しました'))
   }, [])
 
-  console.log(data)
   return (
     <div className="fetch-data-container">
       {(!data || data.length === 0) ? (
@@ -25,7 +24,10 @@ const FetchData = () => {
       ) : (
         <div className="data-list">
           {data.map((item, index) => (
-            <div key={index} className="data-item">{item.title}</div>
+            <button key={index} onClick={() => handleThread_id(item.id)} className="data-item">
+              {item.title}<br />
+              {item.id}
+            </button>
           ))}
         </div>
       )}
