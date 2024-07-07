@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import "../Style/FetchData.css"
 
 const FetchData = () => {
   const [data, setData] = useState([])
+  const navigate = useNavigate()
+
+  const handleThread_id = (id) => {
+    navigate(`/threads/${id}`)
+  }
 
   useEffect(() => {
     fetch('https://railway.bulletinboard.techtrain.dev/threads?offset=0')
