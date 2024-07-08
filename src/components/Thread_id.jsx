@@ -1,3 +1,19 @@
+
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+
+const ThreadPage = () => {
+  const { thread_id } = useParams();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchThread(thread_id).then((data) => {
+      setData(data);
+    }
+    )
+  }, [thread_id]);
+
   return (
     <>
       <h1>Thread Page</h1>
@@ -18,6 +34,7 @@
     </>
   );
 }
+
 export default ThreadPage;
 
 const fetchThread = async (thread_id) => {
