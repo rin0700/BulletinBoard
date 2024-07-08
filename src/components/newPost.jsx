@@ -12,6 +12,9 @@
         console.log(err);
         alert('スレッドの作成に失敗しました');
       });
+    setNewPost('');
+  }
+
   return (
     <>
       <h2>投稿する</h2>
