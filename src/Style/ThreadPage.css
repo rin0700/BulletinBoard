@@ -1,0 +1,13 @@
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  /* 必要に応じてコンポーネント間のスペースを調整 */
+}
+
+.Thread_id,
+.NewPost {
+  flex: 1;
+  /* コンポーネントの成長を調整 */
+  margin: 10px;
+  /* オプション: スペース用にマージンを追加 */
+}
