@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 function NewThread() {
   const [newThread, setNewThread] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -12,6 +14,7 @@ function NewThread() {
       .then((res) => {
         console.log(res)
         alert('スレッドを作成しました')
+        navigate('/')
       })
       .catch((err) => {
         console.log(err)
