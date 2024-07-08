@@ -18,3 +18,15 @@
     </>
   );
 }
+export default ThreadPage;
+
+const fetchThread = async (thread_id) => {
+  try {
+    const response = await fetch(`https://railway.bulletinboard.techtrain.dev/threads/${thread_id}/posts?offset=0`);
+    const json = await response.json();
+    return json.posts;
+  } catch (error) {
+    alert('データの取得に失敗しました');
+    return [];
+  }
+}
