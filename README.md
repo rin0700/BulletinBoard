@@ -1,8 +1,27 @@
-# React + Vite
+### アプリケーションの概要
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+このアプリケーションは、掲示板（フォーラム）システムであり、ユーザーがスレッド（テーマ）を作成し、そのスレッドに対して投稿を行うことができるものです。Reactを使用して開発されています。
+ユーザーが新しいスレッドを作成し、特定のスレッドに対して投稿を行うことができる掲示板システムです。
+APIを通じてデータを取得・送信しています。各コンポーネントは、データの取得、ナビゲーション、投稿の作成などの機能を提供し、ユーザーが簡単に掲示板を利用できるようになっています。
 
-Currently, two official plugins are available:
+### 各コンポーネントの説明
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **FetchData.jsx**
+    - データをAPIから取得し、スレッドの一覧を表示します。
+    - 各スレッドのボタンをクリックすると、対応するスレッドページに遷移します。
+
+2. **Header.jsx**
+    - ヘッダーコンポーネントであり、ナビゲーションを提供します。
+    - 「掲示板」タイトルをクリックするとホームに遷移し、「スレッドを立てる」ボタンをクリックすると新しいスレッド作成ページに遷移します。
+
+3. **newPost.jsx**
+    - 特定のスレッドに対して新しい投稿を行うフォームを提供します。
+    - 投稿内容を入力し、送信するとAPIを通じて投稿が保存されます。
+
+4. **newThread.jsx**
+    - 新しいスレッドを作成するためのフォームを提供します。
+    - スレッド名を入力し、送信するとAPIを通じてスレッドが作成されます。
+
+5. **Thread_id.jsx**
+    - 特定のスレッドの投稿を表示するページ。
+    - スレッドIDに基づいて投稿をAPIから取得し、表示します。
