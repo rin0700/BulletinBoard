@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 const NewPost = () => {
   const { thread_id } = useParams();
   const [newPost, setNewPost] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,11 +15,12 @@ const NewPost = () => {
     })
       .then((res) => {
         console.log(res);
+        dispatch({ type: 'ADD_POST' });
         alert('スレッドを作成しました');
-        window.location.reload();
+
       })
       .catch((err) => {
-        console.log(err);
+        console.log('Error:', err.response ? err.response.data : err.message);
         alert('スレッドの作成に失敗しました');
       });
 
