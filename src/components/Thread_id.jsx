@@ -1,22 +1,23 @@
-
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 const ThreadPage = () => {
   const { thread_id } = useParams();
   const [data, setData] = useState([]);
+  const addPost = useSelector((state) => state.addPost);
 
   useEffect(() => {
     fetchThread(thread_id).then((data) => {
       setData(data);
     }
     )
-  }, [thread_id]);
+  }, [thread_id, addPost]);
 
   return (
     <>
-      <h1>Thread Page</h1>
+      <h1>Thread Page:{addPost + ''}</h1>
       <p>Thread ID: {thread_id}</p>
       <div className="fetch-post-container">
         {(!data || data.length === 0) ? (
@@ -24,9 +25,9 @@ const ThreadPage = () => {
         ) : (
           <div className="data-list">
             {data.map((item, index) => (
-              <dev key={index} className="data-item">
+              <div key={index} className="data-item">
                 {item.post}
-              </dev>
+              </div>
             ))}
           </div>
         )}
