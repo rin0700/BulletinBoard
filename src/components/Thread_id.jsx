@@ -17,7 +17,7 @@ const ThreadPage = () => {
 
   return (
     <>
-      <h1>Thread Page:{addPost + ''}</h1>
+      <h1>Thread Page</h1>
       <p>Thread ID: {thread_id}</p>
       <div className="fetch-post-container">
         {(!data || data.length === 0) ? (
